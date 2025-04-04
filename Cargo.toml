@@ -7,7 +7,7 @@ rust-version = "1.86.0"
 description = "Library to query Danmarks Adressers Web API (DAWA)"
 readme = "README.md"
 keywords = ["DAWA"]
-publish = true
+license = "0BSD"
 
 
 [dependencies]
