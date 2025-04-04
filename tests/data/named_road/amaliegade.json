@@ -1,0 +1,56 @@
+{
+  "id": "973179fb-8045-4c6a-a2cd-ab03b31269cf",
+  "href": "https://api.dataforsyningen.dk/navngivneveje/973179fb-8045-4c6a-a2cd-ab03b31269cf",
+  "darstatus": "gældende",
+  "navn": "Amaliegade",
+  "adresseringsnavn": "Amaliegade",
+  "administrerendekommune": {
+    "href": "https://api.dataforsyningen.dk/kommuner/0101",
+    "kode": "0101",
+    "navn": "København"
+  },
+  "retskrivningskontrol": "Godkendt",
+  "udtaltvejnavn": "Amaliegade",
+  "visueltcenter": [
+    12.59431319,
+    55.68533579
+  ],
+  "bbox": [
+    12.59130877,
+    55.68152598,
+    12.59803278,
+    55.68818884
+  ],
+  "historik": {
+    "oprettet": "1900-01-01T12:00:00.000Z",
+    "ændret": "1900-01-01T12:00:00.000Z",
+    "ikrafttrædelse": "1900-01-01T12:00:00.000Z",
+    "nedlagt": null
+  },
+  "vejstykker": [
+    {
+      "href": "https://api.dataforsyningen.dk/vejstykker/0101/0128",
+      "kommunekode": "0101",
+      "kode": "0128",
+      "id": "5c9636a2-4eae-11e8-93fd-066cff24d637",
+      "darstatus": 3
+    }
+  ],
+  "postnumre": [
+    {
+      "href": "https://api.dataforsyningen.dk/postnumre/1256",
+      "nr": "1256",
+      "navn": "København K"
+    }
+  ],
+  "beliggenhed": {
+    "oprindelse": {
+      "kilde": "Ekstern",
+      "tekniskstandard": "NO",
+      "registrering": "2018-05-03T15:57:30.356Z",
+      "nøjagtighedsklasse": "B"
+    },
+    "vejtilslutningspunkter": null,
+    "geometritype": "vejnavnelinje"
+  }
+}
