@@ -1,6 +1,5 @@
 [package]
 name = "dawars"
-authors = ["Rasmus Ladekjær Pedersen <ladekjaer@gmail.com>"]
 version = "0.0.1"
 edition = "2024"
 rust-version = "1.86.0"
