@@ -3,7 +3,7 @@ use url::Url;
 use uuid::Uuid;
 
 #[derive(Debug, Serialize, Deserialize, PartialEq, Clone)]
-pub struct RoadSegment {
+pub struct RoadSection {
     #[serde(rename = "id")]
     uuid: Uuid,
 
@@ -20,7 +20,7 @@ pub struct RoadSegment {
     status: u8,
 }
 
-impl RoadSegment {
+impl RoadSection {
     pub fn uuid(&self) -> Uuid {
         self.uuid
     }

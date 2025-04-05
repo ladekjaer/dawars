@@ -1,6 +1,6 @@
 use crate::models::municipality::Municipality;
 use crate::models::road_history::History;
-use crate::models::road_segment::RoadSegment;
+use crate::models::road_section::RoadSection;
 use crate::models::spell_check_status::SpellCheckStatus;
 use crate::models::zip_code::ZipCode;
 use serde::{Deserialize, Serialize};
@@ -58,7 +58,7 @@ pub struct NamedRoad {
     pronunciation: Option<String>,
 
     #[serde(rename = "vejstykker")]
-    road_segments: Vec<RoadSegment>,
+    road_segments: Vec<RoadSection>,
 
     #[serde(rename = "postnumre")]
     zip_codes: Vec<ZipCode>,
@@ -101,7 +101,7 @@ impl NamedRoad {
         &self.pronunciation
     }
 
-    pub fn road_segments(&self) -> &Vec<RoadSegment> {
+    pub fn road_segments(&self) -> &Vec<RoadSection> {
         &self.road_segments
     }
 
