@@ -1,6 +1,8 @@
 use std::error::Error;
 use url::Url;
-use crate::blocking::chained_constructor::ChainedConstructor;
+pub mod chained_constructor;
+
+use crate::blocking::request::chained_constructor::ChainedConstructor;
 use crate::models::named_road::NamedRoad;
 
 pub struct Request {
