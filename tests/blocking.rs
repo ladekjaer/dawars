@@ -1,11 +1,11 @@
-use dawars::blocking::request_builder::RequestBuilder;
+use dawars::blocking::chained_constructor::ChainedConstructor;
 
 #[test]
 fn execute_request() {
     let street_name = "Amaliegade";
-    let request = RequestBuilder::new()
+    let request = ChainedConstructor::new()
         .query(street_name)
-        .build();
+        .construct();
     let result = request
         .execute()
         .expect("Failed to execute request.");

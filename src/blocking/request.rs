@@ -1,6 +1,6 @@
 use std::error::Error;
 use url::Url;
-use crate::blocking::request_builder::RequestBuilder;
+use crate::blocking::chained_constructor::ChainedConstructor;
 use crate::models::named_road::NamedRoad;
 
 pub struct Request {
@@ -14,8 +14,8 @@ impl Request {
         Ok(response)
     }
 
-    pub fn builder() -> RequestBuilder {
-        RequestBuilder::default()
+    pub fn builder() -> ChainedConstructor {
+        ChainedConstructor::default()
     }
 
     pub fn new(url: Url) -> Self {
@@ -33,8 +33,8 @@ mod tests {
 
     #[test]
     fn test_builder() {
-        let request = RequestBuilder::new()
-            .build();
+        let request = ChainedConstructor::new()
+            .construct();
         assert_eq!(request.url().scheme(), "https");
     }
 
@@ -48,8 +48,8 @@ mod tests {
 
     #[test]
     fn test_url() {
-        let request = RequestBuilder::new()
-            .build();
+        let request = ChainedConstructor::new()
+            .construct();
         let expected = "https://api.dataforsyningen.dk/navngivneveje";
         let actual = request.url().to_string();
         assert_eq!(expected, &actual);

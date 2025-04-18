@@ -2,15 +2,15 @@ use crate::blocking::request::Request;
 use url::Url;
 
 #[derive(Debug, Default)]
-pub struct RequestBuilder {
+pub struct ChainedConstructor {
     base_url: String,
     query: Option<String>,
     format: Option<String>,
     municipalities: Vec<String>,
 }
 
-impl RequestBuilder {
-    pub fn build(&self) -> Request {
+impl ChainedConstructor {
+    pub fn construct(&self) -> Request {
         let mut url = Url::parse(&self.base_url).expect("Invalid base URL");
 
         if let Some(query) = &self.query {
@@ -64,15 +64,15 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_builder() {
+    fn test_construct() {
         let expected = Url::parse("https://api.dataforsyningen.dk/navngivneveje?q=Amaliegade&format=json&kommunekode=101|185").expect("Invalid URL");
 
-        let builder = RequestBuilder::new()
+        let constructor = ChainedConstructor::new()
             .query("Amaliegade")
             .format("json")
             .municipalities(&["101", "185"]);
 
-        let request = builder.build();
+        let request = constructor.construct();
 
         let actual = request.url().to_owned();
 
