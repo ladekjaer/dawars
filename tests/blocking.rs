@@ -1,4 +1,4 @@
-use dawars::blocking::request::chained_constructor::ChainedConstructor;
+use dawars::blocking::request::ChainedConstructor;
 
 #[test]
 fn execute_request() {

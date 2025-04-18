@@ -1,8 +1,8 @@
 use std::error::Error;
 use url::Url;
 pub mod chained_constructor;
+pub use chained_constructor::ChainedConstructor;
 
-use crate::blocking::request::chained_constructor::ChainedConstructor;
 use crate::models::named_road::NamedRoad;
 
 pub struct Request {
@@ -11,8 +11,7 @@ pub struct Request {
 
 impl Request {
     pub fn execute(&self) -> Result<Vec<NamedRoad>, Box<dyn Error>> {
-        let response = reqwest::blocking::get(self.url().as_str())?
-            .json::<Vec<NamedRoad>>()?;
+        let response = reqwest::blocking::get(self.url().as_str())?.json::<Vec<NamedRoad>>()?;
         Ok(response)
     }
 
@@ -35,8 +34,7 @@ mod tests {
 
     #[test]
     fn test_builder() {
-        let request = ChainedConstructor::new()
-            .construct();
+        let request = ChainedConstructor::new().construct();
         assert_eq!(request.url().scheme(), "https");
     }
 
@@ -50,8 +48,7 @@ mod tests {
 
     #[test]
     fn test_url() {
-        let request = ChainedConstructor::new()
-            .construct();
+        let request = ChainedConstructor::new().construct();
         let expected = "https://api.dataforsyningen.dk/navngivneveje";
         let actual = request.url().to_string();
         assert_eq!(expected, &actual);
