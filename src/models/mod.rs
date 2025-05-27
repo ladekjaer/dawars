@@ -1,4 +1,5 @@
 pub mod municipality;
+pub mod municipality_code;
 pub mod named_road;
 pub mod road_history;
 pub mod road_section;
